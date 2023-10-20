@@ -4,8 +4,8 @@ import { givenExistingApp } from "@test/utils/fixture/shared/app/app.fixture";
 import { givenExistingDbConnection } from "@test/utils/fixture/shared/db-connection/db-connection.fixture";
 import DataSource from '@src/modules/database/config/typeorm.config';
 import { cleanApp } from '@test/utils/fixture/shared/app/clean-app';
-import { givenExistingOrder } from '../../order.e2e-fixture';
-import { OrderBuilder } from '../../order.e2e-builder';
+import { givenExistingOrder } from '../../utils/order.e2e-fixture';
+import { OrderBuilder } from '../../utils/order.e2e-builder';
 
 describe('Get all orders', () => {
     let app: NestExpressApplication;

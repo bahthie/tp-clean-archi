@@ -5,8 +5,8 @@ import { givenExistingDbConnection } from "@test/utils/fixture/shared/db-connect
 import DataSource from '@src/modules/database/config/typeorm.config';
 import { cleanApp } from '@test/utils/fixture/shared/app/clean-app';
 import { randomUUID } from 'crypto';
-import { OrderBuilder } from '../order.e2e-builder';
-import { givenExistingOrder } from '../order.e2e-fixture';
+import { OrderBuilder } from '../utils/order.e2e-builder';
+import { givenExistingOrder } from '../utils/order.e2e-fixture';
 import Order from '@src/modules/order/domain/model/entity/order.orm-entity';
 
 describe('Delete order', () => {

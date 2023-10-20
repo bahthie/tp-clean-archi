@@ -5,7 +5,7 @@ import { givenExistingDbConnection } from "@test/utils/fixture/shared/db-connect
 import DataSource from '@src/modules/database/config/typeorm.config';
 import { cleanApp } from '@test/utils/fixture/shared/app/clean-app';
 import { CreateOrderDtoInterface } from '@src/modules/order/domain/model/dto/create-order.dto.interface';
-import { OrderBuilder } from '../order.e2e-builder';
+import { OrderBuilder } from '../utils/order.e2e-builder';
 
 describe('Create Order', () => {
     let app: NestExpressApplication;

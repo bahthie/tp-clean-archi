@@ -1,6 +1,6 @@
 import { ExceptionTypeEnum } from "@src/modules/shared/domain/const/exception-type.enum";
 import { Exception } from "@src/modules/shared/domain/service/util/exception/exceptions.service";
-import { OrderRepositoryInterface } from "../../port/db/order.repository.interface";
+import { OrderRepositoryInterface } from "../../../port/db/order.repository.interface";
 
 export class DeleteOrderService {
     constructor(private readonly OrderRepository: OrderRepositoryInterface) {}
