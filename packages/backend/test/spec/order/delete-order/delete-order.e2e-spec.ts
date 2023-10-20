@@ -7,6 +7,7 @@ import { cleanApp } from '@test/utils/fixture/shared/app/clean-app';
 import { randomUUID } from 'crypto';
 import { OrderBuilder } from '../order.e2e-builder';
 import { givenExistingOrder } from '../order.e2e-fixture';
+import Order from '@src/modules/order/domain/model/entity/order.orm-entity';
 
 describe('Delete order', () => {
     let app: NestExpressApplication;
@@ -29,6 +30,11 @@ describe('Delete order', () => {
         const order = await givenExistingOrder(connection, orderBuild);
         const orderResponse = await request(app.getHttpServer()).delete(`/api/orders/${order.id}`);
         expect(orderResponse.status).toBe(200);
+        const orderRepository = connection.getRepository(Order);
+ 
+        const orderInDb = await orderRepository.findOne({ where: { id: order.id } });
+        
+        expect(orderInDb).toBeNull();
         console.log(orderResponse.body);
         // expect(orderResponse.body.id).toEqual(order.id);
     });
